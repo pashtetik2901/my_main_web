@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='admin_panel.css')}}">
+    <title>Admin</title>
+</head>
+<body>
+    Admin
+    <form action="" method="post" class="form_admin">
+        <input type="text" name="name" placeholder="Name"><br><br>
+        <input type="text" name="describe" placeholder="Describe"><br><br>
+        <input type="text" name="link" placeholder="Link"><br><br>
+        <input type="text" name="photo" placeholder="Photo"><br><br>
+        <input type="text" name="photo2" placeholder="Photo2"><br><br>
+        <input type="text" name="photo3" placeholder="Photo3"><br><br>
+        <input type="submit" value="Gooooo">
+    </form>
+    <br><br><br>
+    {% for work in works %}
+        {% if loop.index%2 == 0 %}
+            <div class="work_ad">
+                <div class="text_work_ad">
+                    <p>Name: {{work[1]}}</p>
+                    <p>Email: {{work[2]}}</p>
+                    <form action="{{url_for('delete_photo', id = work[0])}}" method="post">
+                        <input type="submit" value="Delete" class="del_work">
+                    </form>
+                </div>
+                <div class="slider">
+                    <img class="photo_ad" src="{{work[3]}}" alt="">
+                    <img class="photo_ad" src="{{work[5]}}" alt="">
+                    <img class="photo_ad" src="{{work[6]}}" alt="">
+                </div>
+            </div>
+        {% else %}
+            <div class="work_ad">
+                <div class="slider">
+                    <img class="photo_ad" src="{{work[3]}}" alt="">
+                    <img class="photo_ad" src="{{work[5]}}" alt="">
+                    <img class="photo_ad" src="{{work[6]}}" alt="">
+                </div>
+                <div class="text_work_ad">
+                    <p>Name: {{work[1]}}</p>
+                    <p>Email: {{work[2]}}</p>
+                    <form action="{{url_for('delete_photo', id = work[0])}}" method="post">
+                        <input type="submit" value="Delete" class="del_work">
+                    </form>
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/home.css">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'home.css')}}">
+    <title>Main</title>
+</head>
+<body>
+    <header>
+        Hello World
+    </header>
+    <main>
+        {% for work in works %}
+            {% if loop.index%2 == 0 %}
+                <div class="work">
+                    <div class="text_work">
+                        <h1>Name: {{work[1]}}</h1>
+                        <p>Email: {{work[2]}}</p>
+                    </div>
+                    <div class="slider">
+                        <img class="photo_ad" src="{{work[3]}}" alt="">
+                        <img class="photo_ad" src="{{work[5]}}" alt="">
+                        <img class="photo_ad" src="{{work[6]}}" alt="">
+                    </div>
+                </div>
+            {% else %}
+                <div class="work">
+                    <div class="slider">
+                        <img class="photo_ad" src="{{work[3]}}" alt="">
+                        <img class="photo_ad" src="{{work[5]}}" alt="">
+                        <img class="photo_ad" src="{{work[6]}}" alt="">
+                    </div>
+                    <div class="text_work">
+                        <h1>Name: {{work[1]}}</h1>
+                        <p>Email: {{work[2]}}</p>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </main>
+</body>
+</html>

@@ -1,0 +1,31 @@
+version: '3'
+services:
+  sait:   
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/app
+    environment:
+      - MYSQL_HOST=my_mysql_db
+      - MYSQL_DATABASE=my_data
+      - MYSQL_USER=pasha
+      - MYSQL_PASSWORD=2901
+    depends_on:
+      - my_mysql_db
+    
+  my_mysql_db:
+    image: mysql
+    container_name: my_data
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: 29012007
+      MYSQL_DATABASE: my_data
+      MYSQL_USER: pasha
+      MYSQL_PASSWORD: 2901
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
+    
