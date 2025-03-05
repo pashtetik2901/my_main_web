@@ -11,45 +11,23 @@ header{
     font-size: 24px;
     margin: 20px;
 }
-.work{
-    background-color: grey;
-    width: auto;
-    height: auto;
-    margin-left: 0;
-    margin-right: 0;
-    margin-bottom: 10px;
-    margin: auto;
-    margin-bottom: 50px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
-.text_work{
-    background-color: aqua;
-    width: 350px;
-    min-height: 300px;
+main{
+    background-color: rgb(225, 186, 186);
+    margin: 20px;
     display: flex;
     flex-direction: column;
+    gap: 40px;
     align-items: center;
-    justify-content: center;
-    margin: auto 125px;
-}
-.text_work h1{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-}
-.text_work p{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
 }
 
-.primer_photo{
-    max-width: 500px;
-    max-height: 500px;
-    object-fit: contain;
-    border: none;
-    border-radius: 15px;
-    margin: auto 75px;
+.work{
+    background-color: grey;
+    max-width: 1100px;
+    height: auto;
+
+}
+
+.photo_ad{
+    width: 100%;
+    height: auto;
 }
